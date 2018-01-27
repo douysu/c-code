@@ -1,10 +1,10 @@
-#ifndef NEILIANSAMPLE_H
+ï»¿#ifndef NEILIANSAMPLE_H
 #define NEILIANSAMPLE_H
 class NeilianSample
 {
 public:
 	NeilianSample();
 	~NeilianSample();
-	float calArea(float rect);//¼ÆËãÃæ»ıµÄ·½·¨
+	float calArea(float rect);//è®¡ç®—é¢ç§¯çš„æ–¹æ³•
 };
 #endif 

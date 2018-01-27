@@ -1,11 +1,11 @@
-#include "NeilianSample.h"
+ï»¿#include "NeilianSample.h"
 #include<iostream>
 using namespace std;
 int main() {
 	float rect = 2;
 	NeilianSample* ns = new NeilianSample();
 	float area = ns->calArea(rect);
-	printf("µ±Ç°µÄÃæ»ıÊÇ%f", area);
+	printf("å½“å‰çš„é¢ç§¯æ˜¯%f", area);
 	cin.get();
 }
 inline float NeilianSample::calArea(float rect) {
