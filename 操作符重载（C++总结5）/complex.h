@@ -11,7 +11,6 @@ private:
 	double re, im;
 	friend complex&  doapl(complex*, const complex&);
 };
-#endif
 inline complex&
 doapl(complex* ths, const complex& r) {
 	ths->re += r.re;
@@ -22,3 +21,5 @@ inline complex&
 complex::operator += (const complex& r) {
 	return doapl(this, r);
 }
+#endif
+
