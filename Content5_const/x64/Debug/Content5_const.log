@@ -1,0 +1,2 @@
+﻿  Const_Function.cpp
+c:\users\douzi\desktop\c-smaples\content5_const\const_function.cpp(10): error C3490: 由于正在通过常量对象访问“width”，因此无法对其进行修改
