@@ -1,24 +1,11 @@
+#include "complex.h"
 #include <iostream>
 using namespace std;
-class Object
-{
-public :
-	Object() {};
-	
-	Object(const Object& other) {
-		cout << "拷贝构造函数" << endl;
-	}
-	 Object const& operator=(const Object& other)
-	{
-		cout << "赋值函数" << endl;
-		return *this;
-	}
-};
-int main()
-{
-	Object a;
-	Object b;
-	Object c;
-	a = b = c;
-	std::cin.get();
+int main() {
+	complex c1(2, 1);
+	complex c2(5);
+	printf("%d", sizeof(c2));
+		c2 += c1;
+	cout << c2;
+	cin.get();
 }
