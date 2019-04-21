@@ -1,11 +1,14 @@
-#include "complex.h"
+#include <fstream>
 #include <iostream>
+#include <vector>
 using namespace std;
 int main() {
-	complex c1(2, 1);
-	complex c2(5);
-	printf("%d", sizeof(c2));
-		c2 += c1;
-	cout << c2;
-	cin.get();
+	char data[100] = { '1', '2', '3' };
+	// 以写模式打开文件
+	ofstream outfile;
+	outfile.open("afile.txt");
+	// 向文件写入用户输入的数据
+	outfile << data << endl;
+	// 关闭打开的文件
+	outfile.close();
 }
