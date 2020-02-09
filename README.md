@@ -1,5 +1,7 @@
 # 《高质量C++/C总结》系列的C++/C代码实现
 
+对应系列博客地址：[博客地址](https://blog.csdn.net/modestbean/category_7427434.html)
+
 作者：憨豆酒（YinDou），yindou97@163.com，熟悉图形学，图像处理领域，经常更新的学习总结仓库：<https://github.com/ModestBean/person-summary> 如果大家发现错误以及不合理之处，还希望多多指出。
 
 - [我的Github](https://github.com/ModestBean)
