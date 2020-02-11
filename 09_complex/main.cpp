@@ -1,4 +1,5 @@
 ﻿#include "complex.h"
+#include <iostream>
 int main() {
 	complex c1(2, 1);
 	complex c2(5);
