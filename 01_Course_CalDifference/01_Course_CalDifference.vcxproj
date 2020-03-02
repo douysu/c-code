@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8E2C5E56-3D8F-4099-A60A-7B49D3A8F2C8}</ProjectGuid>
-    <RootNamespace>example</RootNamespace>
+    <ProjectGuid>{D2F9D4D3-E7FD-4ED3-A4F0-2FA961EA6F4A}</ProjectGuid>
+    <RootNamespace>My01CourseCalDifference</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,11 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="people.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="people.h" />
+    <ClCompile Include="CalDifference.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
