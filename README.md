@@ -1,10 +1,10 @@
 # 《高质量C++/C总结》系列的C++/C代码实现
 
-作者：憨豆酒（YinDou），yindou97@163.com，熟悉图形学，图像处理领域，经常更新的学习总结仓库：<https://github.com/ModestBean/person-summary> 如果大家发现错误以及不合理之处，还希望多多指出。
+作者：憨豆酒（YinDou），yindou97@163.com，熟悉图形学，图像处理领域，经常更新的学习总结仓库：<https://github.com/douysu/person-summary> 如果大家发现错误以及不合理之处，还希望多多指出。
 
-- [我的Github](https://github.com/ModestBean)
+- [我的Github](https://github.com/douysu)
 - [我的技术CSDN](https://blog.csdn.net/ModestBean)
-- [我的个人博客](https://modestbean.github.io/)
+- [我的知乎专栏](https://zhuanlan.zhihu.com/c_1218472587279433728)
 
 # 博客地址
 

@@ -19,64 +19,50 @@
 
 using namespace std;
 
-int differentValue(int* a, int n);
-void quickSort(int* a, int left, int right);
-
 int minDistance(int* array, int length)
 {
 	if (array == NULL || length == 0)
 		throw exception("Invaild input. \n");
 
-	quickSort(array, 0, length - 1);
-	
-	return differentValue(array, length);
-}
+	int leftValue, rightValue;
+	leftValue = array[0];
+	rightValue = array[0];
 
-int differentValue(int* a, int n) {
-	int dvalue = 100001;
-	for (int i = 1; i < n; i++) {
-		int elem = a[i] - a[i - 1];
+	for (int i = 0; i < length; i++) {
+		if (array[i] > rightValue) {
+			rightValue = array[i];
+		}
 
-		if (elem < dvalue) {
-			dvalue = elem;
+		if (array[i] < leftValue) {
+			leftValue = array[i];
 		}
 	}
-	return dvalue;
-}
 
-void quickSort(int* a, int left, int right) {
-	int i, j, t, pivotkey;
+	for (int i = 0; i < length; i++) {
+		int value = array[i];
+		int result = rightValue - leftValue;
 
-	if (left > right) {
-		return;
+		if (value > rightValue && result > (value - rightValue))
+		{
+			leftValue = rightValue;
+			rightValue = value;
+		}
+
+		if (value < leftValue && result > (leftValue - value)) {
+			rightValue = leftValue;
+			leftValue = value;
+		}
+		
+		if (value > leftValue&& value < rightValue)
+		{
+			if (2 * value > (leftValue + rightValue))
+				leftValue = value;
+			else
+				rightValue = value;
+		}
 	}
 
-	pivotkey = a[left];
-
-	i = left;
-	j = right;
-	while (i != j) {
-
-		while (a[j] >= pivotkey && i < j) {	
-			j--;
-		}
-
-		while (a[i] <= pivotkey && i < j) {
-			i++;
-		}
-
-		if (i < j) {
-			t = a[i];
-			a[i] = a[j];
-			a[j] = t;
-		}
-
-	}
-	a[left] = a[i];
-	a[i] = pivotkey;
-
-	quickSort(a, left, i - 1);
-	quickSort(a, i + 1, right);
+	return rightValue - leftValue;
 }
 
 void Test(const char* testName, int* array, int length, int expected)
@@ -102,18 +88,26 @@ void Test(const char* testName, int* array, int length, int expected)
 
 int main()
 {
-	 int array[] = { 1, 2, 4, 6, 8, 10, -3 };
-	 Test("Test1", array, 7, 1);
+	//// 正常数组
+	//int array[] = { 1, 2, 4, 6, 8, 10, -3 };
+	//Test("Test1", array, 7, 1);
 
-	 int array2[] = { 1, -2, 4, -6, 8, -10, -3 };
-	 Test("Test2", array2, 7, 1);
+	//// 差为0
+	//int array2[] = { 1, 10, 10, 3, 4, 3, 5 };
+	//Test("Test2", array2, 7, 0);
 
-	 int array3[] = { 0, 0 };
-	 Test("Test3", array3, 2, 0);
+	//// 全部一样
+	//int array3[] = { 1, 1, 1, 1, 1, 1, 1 };
+	//Test("Test3", array3, 7, 0);
 
-	 int* array4 = NULL;
-	 Test("Test4", array4, 0, 0);
+	// 全部一样
+	int array4[] = { 10, 5, -6, 2, 7, 9, 8 };
+	Test("Test4", array4, 7, 1);
 
+	/*int array3[] = { 0, 0 };
+	Test("Test3", array3, 2, 0);
 
+	int* array4 = NULL;
+	Test("Test4", array4, 0, 0);*/
 	return 0;
 }
