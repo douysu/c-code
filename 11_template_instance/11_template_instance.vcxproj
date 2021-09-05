@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{51c2a164-0554-4d0c-86b8-bc9fbf81022e}</ProjectGuid>
-    <RootNamespace>My10stlvector</RootNamespace>
+    <ProjectGuid>{c3413dbf-4711-442d-b912-099365c9c5fd}</ProjectGuid>
+    <RootNamespace>My11templateinstance</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,8 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="geometry.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="geometry.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
