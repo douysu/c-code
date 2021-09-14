@@ -139,8 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Alloc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Alloc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
