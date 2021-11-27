@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#define TEST2
+// #define TEST2
+#define TEST3
 
 #ifdef TEST1
 
@@ -40,3 +41,12 @@ int main()
 }
 
 #endif // TEST2
+
+#ifdef TEST3
+
+int main()
+{
+	return 0;
+}
+
+#endif // TEST3
