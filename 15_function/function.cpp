@@ -1,5 +1,6 @@
-//#define FUNCTION_POINT
-#define STD_FUNCTION
+// #define FUNCTION_POINT
+// #define STD_FUNCTION
+#define BIND_FUNCTION
 
 #ifdef FUNCTION_POINT
 #include <cstdio>
@@ -97,3 +98,29 @@ int main()
 }
 
 #endif // STD_FUNCTION
+
+#ifdef BIND_FUNCTION
+#include <iostream>  
+#include <functional>  
+
+using namespace std;
+using namespace placeholders;
+
+int main()
+{
+    auto fun = [](int* array, int n, int num) {
+        for (int i = 0; i < n; i++)
+        {
+            if (array[i] > num)
+                cout << array[i] << ends;
+        }
+        cout << endl;
+    };
+
+    int array[] = { 1, 3, 5, 7, 9 };
+    auto new_fun = bind(fun, _1, _2, 5);
+    new_fun(array, sizeof(array) / sizeof(*array)); // 调用只需要2个参数了
+}
+
+
+#endif // BIND_FUNCTION
