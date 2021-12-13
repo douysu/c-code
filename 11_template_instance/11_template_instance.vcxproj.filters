@@ -26,5 +26,11 @@
     <ClInclude Include="geometry.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Blob.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BlobPtr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
