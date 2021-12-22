@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-// #define TEST2
-#define TEST3
 
+
+// #define TEST1
 #ifdef TEST1
 
 #include "String.h"
@@ -19,8 +19,10 @@ int main() {
 
 #endif // TEST1
 
+#define TEST2
 #ifdef TEST2
 
+// 字符数组、字符指针、字符串的三种使用方式
 int main()
 {
 	// 注意两种初始化的方式
@@ -34,14 +36,15 @@ int main()
 	cout << strlen(array1) << endl; // 4
 	cout << sizeof(array2) << endl; // 6
 	cout << strlen(array2) << endl; // 5
-	cout << sizeof(p) << endl;
-	cout << strlen(p) << endl;
+	cout << sizeof(p) << endl; // 8 64位指针大小
+	cout << strlen(p) << endl; // 5
 
 	return 0;
 }
 
 #endif // TEST2
 
+// #define TEST3
 #ifdef TEST3
 
 int main()
