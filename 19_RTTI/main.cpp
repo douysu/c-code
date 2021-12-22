@@ -58,7 +58,7 @@ int main()
 
 #endif
 
-#define	PARCTICE_19_3A
+// #define	PARCTICE_19_3A
 #ifdef PARCTICE_19_3A
 
 class Base
@@ -129,7 +129,7 @@ int main() {
 		cout << "向下强制转换失败" << endl;
 	}
 
-	// 转换失败：pbase还是指向A的对象，pbase强制转换成B对象
+	// 转换失败：pbase还是指向A的对象，pbase强制转换成B对象，A对象变成指向B的
 	pb = dynamic_cast<B*>(pbase);
 	if (nullptr != pb) {
 		cout << "向下强制转换成功" << endl;
@@ -142,6 +142,105 @@ int main() {
 	// 调用子类B的print函数
     pbase->print();
 	pbase->printObejct();
+
+	return 0;
+}
+
+#endif
+
+// #define PRACTICE_19_4
+#ifdef PRACTICE_19_4
+class A {
+public:
+	A() { }
+	virtual ~A() { }
+};
+
+class B : public A {
+public:
+	B() { }
+};
+
+class C : public B {
+public:
+	C() { }
+};
+
+class D : public B, public A {
+public:
+	D() { }
+};
+
+int main()
+{
+	A* pa = new C();
+	try
+	{
+		const C& c = dynamic_cast<const C&>(*pa);
+	}
+	catch(std::bad_cast& e)
+	{
+		cout << e.what() << endl;
+	}
+
+	return 0;
+}
+
+#endif
+
+// #define PRACTICE_19_5
+#ifdef PRACTICE_19_5
+// 我们想使用基类对象的指针或引用执行某个派生类操作并且该操作不是虚函数，则可以使用RTTI运算符（该类类型应该含有虚函数)
+// 在这个过程中会进行对象的判断，判断是否安全
+#endif
+
+#define PRACTICE_19_6
+#ifdef PRACTICE_19_6
+#include <typeinfo>
+class A
+{
+public:
+	virtual ~A() {}
+};
+
+class B : public A
+{};
+
+class C : public B
+{};
+
+class D : public B, public A
+{};
+
+int main()
+{
+	A* pa1 = new C();
+	if (C* qc = dynamic_cast<C*>(pa1))
+	{
+		cout << "success" << endl;
+	}
+	else
+	{
+		cout << "fail" << endl;
+	}
+
+	A* pa2 = new C();
+	try
+	{
+		const C& rc = dynamic_cast<const C&>(*pa2);
+	}
+	catch (std::bad_cast& e)
+	{
+		cout << e.what() << endl;
+	}
+
+	C c;
+	if (typeid(*pa1) == typeid(*pa2))
+		cout << "same type" << endl;
+	if (typeid(*pa1) == typeid(c))
+		cout << "same type as C" << endl;
+	if (typeid(*pa1) == typeid(C))
+		cout << "same type as C" << endl;
 
 	return 0;
 }
